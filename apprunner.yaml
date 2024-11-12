@@ -6,3 +6,6 @@ build:
       - go build main.go
 run:
   command: ./main
+  env:
+    - name: TEST_URL
+      value: https://nfknicsdk3.us-east-2.awsapprunner.com
