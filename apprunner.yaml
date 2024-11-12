@@ -8,4 +8,4 @@ run:
   command: ./main
   env:
     - name: TEST_URL
-      value: https://nfknicsdk3.us-east-2.awsapprunner.com
+      value: https://pvc3s8kchm.us-east-2.awsapprunner.com
