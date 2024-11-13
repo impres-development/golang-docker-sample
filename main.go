@@ -30,8 +30,8 @@ func main() {
 		if err != nil {
 			return c.String(http.StatusInternalServerError, err.Error())
 		}
-		defer resp.Body.Close()
 		return c.String(http.StatusOK, resp.Body)
+		defer resp.Body.Close()
 	})
 
 	e.GET("/health", func(c echo.Context) error {
