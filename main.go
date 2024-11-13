@@ -18,6 +18,7 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.HTML(http.StatusOK, "Hello, Docker! (Version 2.1!)")
 	})
+
 	// The path "/test" should make an HTTP request to a url passed in by an environment variable, then output the contents.
 	// The environment variable should be named "TEST_URL" and should be a valid URL.
 	e.GET("/test", func(c echo.Context) error {
@@ -31,6 +32,7 @@ func main() {
 		}
 		defer resp.Body.Close()
 		return c.String(http.StatusOK, resp.Status)
+	})
 
 	e.GET("/health", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, struct{ Status string }{Status: "OK"})
