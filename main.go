@@ -31,6 +31,14 @@ func main() {
 			return c.String(http.StatusInternalServerError, err.Error())
 		}
 		defer resp.Body.Close()
+		if resp.StatusCode == http.StatusOK {
+		    bodyBytes, err := io.ReadAll(resp.Body)
+		    if err != nil {
+		        log.Fatal(err)
+		    }
+		    bodyString := string(bodyBytes)
+		    log.Info(bodyString)
+		}
 		return c.String(http.StatusOK, resp.Status)
 	})
 
