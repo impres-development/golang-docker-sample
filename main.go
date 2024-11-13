@@ -31,7 +31,7 @@ func main() {
 			return c.String(http.StatusInternalServerError, err.Error())
 		}
 		defer resp.Body.Close()
-		return c.String(http.StatusOK, resp.Status)
+		return c.String(http.StatusOK, resp)
 	})
 
 	e.GET("/health", func(c echo.Context) error {
