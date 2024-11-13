@@ -39,7 +39,7 @@ func main() {
 		    bodyString := string(bodyBytes)
 		    log.Info(bodyString)
 		}
-		return c.String(http.StatusOK, resp.Status)
+		return c.String(http.StatusOK)
 	})
 
 	e.GET("/health", func(c echo.Context) error {
